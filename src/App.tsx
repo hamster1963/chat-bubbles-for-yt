@@ -5,7 +5,6 @@ import Bubble from './bubble'
 import BubbleInput from './bubble-input'
 import Chat from './chat'
 import useMessages from './use-messages'
-import { SketchPicker } from 'react-color'
 import React from 'react'
 
 function App() {
@@ -28,16 +27,6 @@ function App() {
     [newMessage, messages]
   )
 
-  const handleFillColourChange = (color: { hex: string }) => {
-    setFillColour(color.hex);
-      console.log(color);
-  };
-
-  const handleStrokeColourChange = (color: { hex: string }) => {
-    setStrokeColour(color.hex);
-      console.log(color);
-  };
-
   const lastMessage = messages[messages.length - 1]
   const dy = lastMessage ? lastMessage.height : 0
 
@@ -59,13 +48,13 @@ function App() {
           strokeColour={strokeColour}
         />
       </Chat>
-      
-      <div className="picker">
-        <p>Fill</p>
-        <SketchPicker color={fillColour} onChange={handleFillColourChange}/>
-        <p>Stroke</p>
-        <SketchPicker color={strokeColour} onChange={handleStrokeColourChange}/>
-      </div>
+
+      {/*<div className="picker">*/}
+      {/*  <p>Fill</p>*/}
+      {/*  <SketchPicker color={fillColour} onChange={handleFillColourChange}/>*/}
+      {/*  <p>Stroke</p>*/}
+      {/*  <SketchPicker color={strokeColour} onChange={handleStrokeColourChange}/>*/}
+      {/*</div>*/}
     </div>
   )
 }
